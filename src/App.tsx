@@ -150,14 +150,22 @@ export default function App() {
     e.preventDefault();
     if (!newGifUrl.trim()) return;
     
+    // Normalização Ninja: Converte link da página em link da imagem
+    let finalUrl = newGifUrl.trim();
+    const giphyUrlPattern = /giphy\.com\/gifs\/(?:.*-)?([a-zA-Z0-9]+)/;
+    const match = finalUrl.match(giphyUrlPattern);
+    if (match && match[1]) {
+      finalUrl = `https://media.giphy.com/media/${match[1]}/giphy.gif`;
+    }
+
     const id = Date.now().toString();
     const newGif: GiphyGif = {
       id,
-      url: newGifUrl,
+      url: finalUrl,
       title: newGifTitle || 'Meu Jutsu',
       images: {
-        fixed_height: { url: newGifUrl },
-        original: { url: newGifUrl }
+        fixed_height: { url: finalUrl },
+        original: { url: finalUrl }
       },
       isCustom: true
     };

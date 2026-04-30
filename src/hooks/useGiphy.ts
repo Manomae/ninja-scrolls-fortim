@@ -22,11 +22,12 @@ export function useGiphy(query: string) {
       const giphyUrlPattern = /giphy\.com\/gifs\/(?:.*-)?([a-zA-Z0-9]+)/;
       const match = searchQuery.match(giphyUrlPattern);
       
+      let finalEndpoint = endpoint;
       if (match && match[1]) {
-        endpoint = `https://api.giphy.com/v1/gifs/${match[1]}?api_key=${apiKey}`;
+        finalEndpoint = `https://api.giphy.com/v1/gifs/${match[1]}?api_key=${apiKey}`;
       }
 
-      const response = await fetch(endpoint);
+      const response = await fetch(finalEndpoint);
       
       if (!response.ok) {
         throw new Error('Falha na conexão com o Reino Giphy');
@@ -35,8 +36,10 @@ export function useGiphy(query: string) {
       const data = await response.json();
       
       if (match && match[1]) {
+        // Single GIF API returns { data: { ... } }
         setGifs(data.data ? [data.data] : []);
       } else {
+        // Search API returns { data: [ ... ] }
         setGifs(data.data || []);
       }
     } catch (err) {
