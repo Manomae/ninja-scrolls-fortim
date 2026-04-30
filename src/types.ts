@@ -103,6 +103,24 @@ export const FEATURED_GIFS: GiphyGif[] = [
       fixed_height: { url: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHYyeHl4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/7mU86E0r2ZIn6/giphy.gif' },
       original: { url: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHYyeHl4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/7mU86E0r2ZIn6/giphy.gif' }
     }
+  },
+  {
+    id: 'f11',
+    url: '',
+    title: 'Kakashi Susanoo',
+    images: {
+      fixed_height: { url: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHYyeHl4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/A6ZlX8fkKqCap9UkS2/giphy.gif' },
+      original: { url: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHYyeHl4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/A6ZlX8fkKqCap9UkS2/giphy.gif' }
+    }
+  },
+  {
+    id: 'f12',
+    url: '',
+    title: 'Sasuke Rinnegan',
+    images: {
+      fixed_height: { url: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHYyeHl4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/fW6p5WFT7pE63j8f1h/giphy.gif' },
+      original: { url: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHYyeHl4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4ZzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/fW6p5WFT7pE63j8f1h/giphy.gif' }
+    }
   }
 ];
 
@@ -131,6 +149,12 @@ export const CHARACTERS: Character[] = [
   { name: 'Orochimaru', query: 'orochimaru', icon: '🐍', color: '#483d8b' },
   { name: 'Tsunade', query: 'tsunade senju', icon: '🐌', color: '#105324' },
   { name: 'Killer Bee', query: 'killer bee naruto', icon: '🐙', color: '#c0c0c0' },
+  { name: 'Neji', query: 'neji hyuga', icon: '☸️', color: '#f0f8ff' },
+  { name: 'Might Guy', query: 'might guy', icon: '🔥', color: '#ff0000' },
+  { name: 'Hidan', query: 'hidan akatsuki', icon: '🥀', color: '#000000' },
+  { name: 'Deidara', query: 'deidara art', icon: '💥', color: '#ffff00' },
+  { name: 'Kisame', query: 'kisame hoshigaki', icon: '🦈', color: '#0000ff' },
+  { name: 'Konan', query: 'konan naruto', icon: '📄', color: '#add8e6' },
 ];
 
 export const CATEGORIES = [

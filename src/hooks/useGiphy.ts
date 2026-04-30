@@ -15,18 +15,32 @@ export function useGiphy(query: string) {
     setError(null);
     try {
       const apiKey = import.meta.env.VITE_GIPHY_API_KEY || PUBLIC_DEMO_KEY;
-      const response = await fetch(
-        `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURIComponent(searchQuery)}&limit=25&rating=g`
-      );
+      
+      let endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURIComponent(searchQuery)}&limit=25&rating=g`;
+      
+      // Handle direct Giphy URLs by extracting ID
+      const giphyUrlPattern = /giphy\.com\/gifs\/(?:.*-)?([a-zA-Z0-9]+)/;
+      const match = searchQuery.match(giphyUrlPattern);
+      
+      if (match && match[1]) {
+        endpoint = `https://api.giphy.com/v1/gifs/${match[1]}?api_key=${apiKey}`;
+      }
+
+      const response = await fetch(endpoint);
       
       if (!response.ok) {
-        throw new Error('Failed to fetch GIFs');
+        throw new Error('Falha na conexão com o Reino Giphy');
       }
 
       const data = await response.json();
-      setGifs(data.data || []);
+      
+      if (match && match[1]) {
+        setGifs(data.data ? [data.data] : []);
+      } else {
+        setGifs(data.data || []);
+      }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong');
+      setError(err instanceof Error ? err.message : 'Erro oculto');
     } finally {
       setLoading(false);
     }
