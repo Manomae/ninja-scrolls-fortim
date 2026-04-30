@@ -152,13 +152,13 @@ export default function App() {
     
     // Normalização Ninja: Converte link da página em link da imagem real
     let finalUrl = newGifUrl.trim();
-    // Regex robusto para capturar o ID do GIF em múltiplos formatos (incluindo links de imagem e da página)
-    const giphyPattern = /(?:giphy\.com\/(?:gifs|media)\/|i\.giphy\.com\/|media\.giphy\.com\/media\/)(?:.*-)?([a-zA-Z0-9]+)/i;
+    // Regex ninja que ignora query params e foca no ID, agora mais robusto
+    const giphyPattern = /(?:giphy\.com\/(?:gifs|media)\/|i\.giphy\.com\/|media\.giphy\.com\/media\/|gph\.is\/)(?:.*-)?([a-zA-Z0-9_\-]+)(?:\/|\?|$)/i;
     
     const match = finalUrl.match(giphyPattern);
     if (match && match[1]) {
-      // i.giphy.com/[id].gif é o atalho mais confiável e curto para links diretos de imagem
-      finalUrl = `https://i.giphy.com/${match[1]}.gif`;
+      // Link direto oficial do Giphy - usamos media.giphy.com para máxima compatibilidade
+      finalUrl = `https://media.giphy.com/media/${match[1]}/giphy.gif`;
     }
 
     const id = Date.now().toString();

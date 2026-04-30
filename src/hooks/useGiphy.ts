@@ -18,14 +18,14 @@ export function useGiphy(query: string) {
       
       let endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURIComponent(searchQuery)}&limit=25&rating=g`;
       
-      // regex mais robusto para capturar ID do Giphy em várias situações
-      const giphyUrlPattern = /(?:giphy\.com\/(?:gifs|media)\/|i\.giphy\.com\/|media\.giphy\.com\/media\/)(?:.*-)?([a-zA-Z0-9]+)/i;
+      // Regex ninja para capturar ID do Giphy em vários formatos (link da página, link direto, link encurtado)
+      const giphyUrlPattern = /(?:giphy\.com\/(?:gifs|media)\/|i\.giphy\.com\/|media\.giphy\.com\/media\/|gph\.is\/)(?:.*-)?([a-zA-Z0-9_\-]+)(?:\/|\?|$)/i;
       const match = searchQuery.match(giphyUrlPattern);
       
       let finalEndpoint = endpoint;
       if (match && match[1]) {
-        // Se for um link direto, usamos o endpoint de ID único
-        finalEndpoint = `https://api.giphy.com/v1/gifs/${match[1]}?api_key=${apiKey}`;
+        // Usar o endpoint 'gifs?ids=' que costuma ter as mesmas permissões da busca pública
+        finalEndpoint = `https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${match[1]}`;
       }
 
       const response = await fetch(finalEndpoint);
@@ -36,13 +36,8 @@ export function useGiphy(query: string) {
 
       const data = await response.json();
       
-      if (match && match[1]) {
-        // O endpoint de ID único retorna um objeto simples em 'data'
-        setGifs(data.data && !Array.isArray(data.data) ? [data.data] : (Array.isArray(data.data) ? data.data : []));
-      } else {
-        // O endpoint de busca retorna um array em 'data'
-        setGifs(data.data || []);
-      }
+      // O endpoint 'gifs?ids=' sempre retorna um array em 'data'
+      setGifs(data.data || []);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro oculto');
     } finally {
