@@ -18,13 +18,13 @@ export function useGiphy(query: string) {
       
       let endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURIComponent(searchQuery)}&limit=25&rating=g`;
       
-      // Regex ninja para capturar ID do Giphy em vários formatos (link da página, link direto, link encurtado)
-      const giphyUrlPattern = /(?:giphy\.com\/(?:gifs|media)\/|i\.giphy\.com\/|media\.giphy\.com\/media\/|gph\.is\/)(?:.*-)?([a-zA-Z0-9_\-]+)(?:\/|\?|$)/i;
+      // Regex ninja supremo: captura ID do Giphy em qualquer formato de link (página, media, compartilhado)
+      const giphyUrlPattern = /(?:giphy\.com\/(?:gifs|media)\/|i\.giphy\.com\/|media\.giphy\.com\/media\/|gph\.is\/|giphy\.com\/v1\.gifs\/)(?:.*-)?([a-zA-Z0-9]{10,20})/i;
       const match = searchQuery.match(giphyUrlPattern);
       
       let finalEndpoint = endpoint;
       if (match && match[1]) {
-        // Usar o endpoint 'gifs?ids=' que costuma ter as mesmas permissões da busca pública
+        // Se for um link, buscamos pela ID específica
         finalEndpoint = `https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${match[1]}`;
       }
 

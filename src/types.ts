@@ -19,8 +19,8 @@ export const FEATURED_GIFS: GiphyGif[] = [
     url: '',
     title: 'Naruto vs Sasuke Final Battle',
     images: {
-      fixed_height: { url: 'https://media.giphy.com/media/12p5byldyppxS0/giphy.gif' },
-      original: { url: 'https://media.giphy.com/media/12p5byldyppxS0/giphy.gif' }
+      fixed_height: { url: 'https://i.giphy.com/12p5byldyppxS0.gif' },
+      original: { url: 'https://i.giphy.com/12p5byldyppxS0.gif' }
     }
   },
   {
@@ -28,8 +28,8 @@ export const FEATURED_GIFS: GiphyGif[] = [
     url: '',
     title: 'Itachi Mangekyou Sharingan',
     images: {
-      fixed_height: { url: 'https://media.giphy.com/media/CchzkJJ6UrQmQ/giphy.gif' },
-      original: { url: 'https://media.giphy.com/media/CchzkJJ6UrQmQ/giphy.gif' }
+      fixed_height: { url: 'https://i.giphy.com/CchzkJJ6UrQmQ.gif' },
+      original: { url: 'https://i.giphy.com/CchzkJJ6UrQmQ.gif' }
     }
   },
   {
@@ -37,8 +37,8 @@ export const FEATURED_GIFS: GiphyGif[] = [
     url: '',
     title: 'Pain Shinra Tensei',
     images: {
-      fixed_height: { url: 'https://media.giphy.com/media/uS9id7YId695C/giphy.gif' },
-      original: { url: 'https://media.giphy.com/media/uS9id7YId695C/giphy.gif' }
+      fixed_height: { url: 'https://i.giphy.com/uS9id7YId695C.gif' },
+      original: { url: 'https://i.giphy.com/uS9id7YId695C.gif' }
     }
   },
   {
@@ -46,8 +46,8 @@ export const FEATURED_GIFS: GiphyGif[] = [
     url: '',
     title: 'Kakashi Chidori',
     images: {
-      fixed_height: { url: 'https://media.giphy.com/media/idS6YvDmjTshW/giphy.gif' },
-      original: { url: 'https://media.giphy.com/media/idS6YvDmjTshW/giphy.gif' }
+      fixed_height: { url: 'https://i.giphy.com/idS6YvDmjTshW.gif' },
+      original: { url: 'https://i.giphy.com/idS6YvDmjTshW.gif' }
     }
   },
   {
@@ -55,8 +55,8 @@ export const FEATURED_GIFS: GiphyGif[] = [
     url: '',
     title: 'Madara Uchiha Dance',
     images: {
-      fixed_height: { url: 'https://media.giphy.com/media/8SsqYhlSsk9vW/giphy.gif' },
-      original: { url: 'https://media.giphy.com/media/8SsqYhlSsk9vW/giphy.gif' }
+      fixed_height: { url: 'https://i.giphy.com/8SsqYhlSsk9vW.gif' },
+      original: { url: 'https://i.giphy.com/8SsqYhlSsk9vW.gif' }
     }
   },
   {
@@ -64,8 +64,8 @@ export const FEATURED_GIFS: GiphyGif[] = [
     url: '',
     title: 'Might Guy Night Guy',
     images: {
-      fixed_height: { url: 'https://media.giphy.com/media/K7Zk8SclYF0S4/giphy.gif' },
-      original: { url: 'https://media.giphy.com/media/K7Zk8SclYF0S4/giphy.gif' }
+      fixed_height: { url: 'https://i.giphy.com/K7Zk8SclYF0S4.gif' },
+      original: { url: 'https://i.giphy.com/K7Zk8SclYF0S4.gif' }
     }
   },
   {
@@ -73,8 +73,8 @@ export const FEATURED_GIFS: GiphyGif[] = [
     url: '',
     title: 'Jiraiya Summoning',
     images: {
-      fixed_height: { url: 'https://media.giphy.com/media/9G3gf72d4qSBy/giphy.gif' },
-      original: { url: 'https://media.giphy.com/media/9G3gf72d4qSBy/giphy.gif' }
+      fixed_height: { url: 'https://i.giphy.com/9G3gf72d4qSBy.gif' },
+      original: { url: 'https://i.giphy.com/9G3gf72d4qSBy.gif' }
     }
   },
   {
@@ -82,8 +82,8 @@ export const FEATURED_GIFS: GiphyGif[] = [
     url: '',
     title: 'Obito Awaken',
     images: {
-      fixed_height: { url: 'https://media.giphy.com/media/f3fT7bXYhU3XG/giphy.gif' },
-      original: { url: 'https://media.giphy.com/media/f3fT7bXYhU3XG/giphy.gif' }
+      fixed_height: { url: 'https://i.giphy.com/f3fT7bXYhU3XG.gif' },
+      original: { url: 'https://i.giphy.com/f3fT7bXYhU3XG.gif' }
     }
   },
   {
@@ -91,8 +91,8 @@ export const FEATURED_GIFS: GiphyGif[] = [
     url: '',
     title: 'Naruto Sage Mode',
     images: {
-      fixed_height: { url: 'https://media.giphy.com/media/pW2vS7S3R2pW0/giphy.gif' },
-      original: { url: 'https://media.giphy.com/media/pW2vS7S3R2pW0/giphy.gif' }
+      fixed_height: { url: 'https://i.giphy.com/pW2vS7S3R2pW0.gif' },
+      original: { url: 'https://i.giphy.com/pW2vS7S3R2pW0.gif' }
     }
   },
   {
@@ -100,8 +100,8 @@ export const FEATURED_GIFS: GiphyGif[] = [
     url: '',
     title: 'Minato Yellow Flash',
     images: {
-      fixed_height: { url: 'https://media.giphy.com/media/7mU86E0r2ZIn6/giphy.gif' },
-      original: { url: 'https://media.giphy.com/media/7mU86E0r2ZIn6/giphy.gif' }
+      fixed_height: { url: 'https://i.giphy.com/7mU86E0r2ZIn6.gif' },
+      original: { url: 'https://i.giphy.com/7mU86E0r2ZIn6.gif' }
     }
   },
   {
@@ -109,8 +109,8 @@ export const FEATURED_GIFS: GiphyGif[] = [
     url: '',
     title: 'Kakashi Susanoo',
     images: {
-      fixed_height: { url: 'https://media.giphy.com/media/A6ZlX8fkKqCap9UkS2/giphy.gif' },
-      original: { url: 'https://media.giphy.com/media/A6ZlX8fkKqCap9UkS2/giphy.gif' }
+      fixed_height: { url: 'https://i.giphy.com/A6ZlX8fkKqCap9UkS2.gif' },
+      original: { url: 'https://i.giphy.com/A6ZlX8fkKqCap9UkS2.gif' }
     }
   },
   {
@@ -118,8 +118,8 @@ export const FEATURED_GIFS: GiphyGif[] = [
     url: '',
     title: 'Sasuke Rinnegan',
     images: {
-      fixed_height: { url: 'https://media.giphy.com/media/fW6p5WFT7pE63j8f1h/giphy.gif' },
-      original: { url: 'https://media.giphy.com/media/fW6p5WFT7pE63j8f1h/giphy.gif' }
+      fixed_height: { url: 'https://i.giphy.com/fW6p5WFT7pE63j8f1h.gif' },
+      original: { url: 'https://i.giphy.com/fW6p5WFT7pE63j8f1h.gif' }
     }
   }
 ];
