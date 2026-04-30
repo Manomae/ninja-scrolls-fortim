@@ -18,12 +18,13 @@ export function useGiphy(query: string) {
       
       let endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURIComponent(searchQuery)}&limit=25&rating=g`;
       
-      // Handle direct Giphy URLs by extracting ID
-      const giphyUrlPattern = /giphy\.com\/gifs\/(?:.*-)?([a-zA-Z0-9]+)/;
+      // regex mais robusto para capturar ID do Giphy em várias situações
+      const giphyUrlPattern = /(?:giphy\.com\/(?:gifs|media)\/|i\.giphy\.com\/|media\.giphy\.com\/media\/)(?:.*-)?([a-zA-Z0-9]+)/i;
       const match = searchQuery.match(giphyUrlPattern);
       
       let finalEndpoint = endpoint;
       if (match && match[1]) {
+        // Se for um link direto, usamos o endpoint de ID único
         finalEndpoint = `https://api.giphy.com/v1/gifs/${match[1]}?api_key=${apiKey}`;
       }
 
@@ -36,10 +37,10 @@ export function useGiphy(query: string) {
       const data = await response.json();
       
       if (match && match[1]) {
-        // Single GIF API returns { data: { ... } }
-        setGifs(data.data ? [data.data] : []);
+        // O endpoint de ID único retorna um objeto simples em 'data'
+        setGifs(data.data && !Array.isArray(data.data) ? [data.data] : (Array.isArray(data.data) ? data.data : []));
       } else {
-        // Search API returns { data: [ ... ] }
+        // O endpoint de busca retorna um array em 'data'
         setGifs(data.data || []);
       }
     } catch (err) {

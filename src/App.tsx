@@ -150,12 +150,15 @@ export default function App() {
     e.preventDefault();
     if (!newGifUrl.trim()) return;
     
-    // Normalização Ninja: Converte link da página em link da imagem
+    // Normalização Ninja: Converte link da página em link da imagem real
     let finalUrl = newGifUrl.trim();
-    const giphyUrlPattern = /giphy\.com\/gifs\/(?:.*-)?([a-zA-Z0-9]+)/;
-    const match = finalUrl.match(giphyUrlPattern);
+    // Regex robusto para capturar o ID do GIF em múltiplos formatos (incluindo links de imagem e da página)
+    const giphyPattern = /(?:giphy\.com\/(?:gifs|media)\/|i\.giphy\.com\/|media\.giphy\.com\/media\/)(?:.*-)?([a-zA-Z0-9]+)/i;
+    
+    const match = finalUrl.match(giphyPattern);
     if (match && match[1]) {
-      finalUrl = `https://media.giphy.com/media/${match[1]}/giphy.gif`;
+      // i.giphy.com/[id].gif é o atalho mais confiável e curto para links diretos de imagem
+      finalUrl = `https://i.giphy.com/${match[1]}.gif`;
     }
 
     const id = Date.now().toString();
